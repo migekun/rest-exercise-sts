@@ -45,7 +45,7 @@ public class JpaBasicApplicationTests {
     private MockMvc mockMvc;
 
     /**
-	 * Mapeija les entitats del pacakage org.formacio.domain
+	 * Mapeija les entitats del package org.formacio.domain
 	 * Nomes has d'afegir les anotacions que falten. No has d'afegir cap propietat.
 	 * 
 	 * T'has de basar en l'esquema a src/main/resources/schema.sql

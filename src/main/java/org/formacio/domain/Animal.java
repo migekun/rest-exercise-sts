@@ -1,11 +1,26 @@
 package org.formacio.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="t_animals")
 public class Animal {
 	
 	/**
 	 * L'id d'animal es el propi nom. No fa falta cap generador
 	 */
+	@Id
+	@Column(name="ani_nom")
 	private String nom;
+	
+	@ManyToOne
+	@JoinColumn(name="ani_propietari")
+	private Persona propietari;
 
 	public String getNom() {
 		return nom;
@@ -13,6 +28,14 @@ public class Animal {
 
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+	
+	public Persona getPropietari() {
+		return propietari;
+	}
+
+	public void setPropietari(Persona propietari) {
+		this.propietari = propietari;
 	}
 
 	@Override
