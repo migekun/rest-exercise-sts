@@ -54,7 +54,7 @@ public class JpaBasicApplicationTests {
 	public void test_mapping() { 
 		
 		Assert.assertNotNull("No troba municipi", em.find(Municipi.class, "Selva"));
-		Assert.assertNotNull("No troba animal", em.find(Animal.class	, "rambo"));
+		Assert.assertNotNull("No troba animal", em.find(Animal.class, "rambo"));
 		Assert.assertNotNull("No troba persona", em.find(Persona.class, 10L));
 	}	
 
@@ -86,7 +86,7 @@ public class JpaBasicApplicationTests {
 		// Canvia l'assignacio a null per la invocacio al metode del repositori
 		// que hageu creat passant com a parametre 10L
 		// Per exemple Persona antonia = repositori.carrega(10L);
-		Persona antonia = null;
+		Persona antonia = repositori.carrega(10L);
 		Assert.assertNotNull("No deixis a la pobre antonia a null", antonia);
 		Assert.assertEquals(1, antonia.getPropietats().size());
 	}

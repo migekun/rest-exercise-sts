@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,9 +29,10 @@ public class Persona {
 	@Column(name="per_nom")
 	private String nom;
 	
+	@OneToMany(mappedBy="propietariCasa")
 	private Set<Casa> propietats = new HashSet<>();
 	
-	@OneToMany(mappedBy="propietari")
+	@OneToMany(mappedBy="propietari", fetch=FetchType.EAGER)
 	private Set<Animal> mascotes = new HashSet<>();
 	
 	public Long getId() {
